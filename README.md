@@ -56,3 +56,64 @@ __Subsetting Lists__
         
 ![Screenshot (267)](https://user-images.githubusercontent.com/17926361/58116240-74603700-7c19-11e9-83c4-74f4e3d7f10a.png)
 
+-----
+----
+Python code to convert speech to text.
+
+```python
+  
+import speech_recognition as sr
+r = sr.Recognizer()
+with sr.Microphone() as source:
+    print('Speak Anything')
+    audio = r.listen(source)
+    
+    try:
+        text = r.recognize_google(audio)
+        print('you said : {}'.format(text))
+    except:
+        print('Sorry')       
+```
+-----------------------------
+Python code to convert text to speech.
+
+```python
+"""
+@author: subha
+"""
+
+import pyttsx3
+
+engine = pyttsx3.init()
+say = input('enter')
+engine.say(say)
+engine.say("Im bored")
+
+engine.runAndWait()
+```
+-------------
+
+Python code to create multiple excel sheets with incremental sheet names
+
+```python
+"""
+@author: subha
+"""
+#Create multiple excel sheets
+import openpyxl
+
+wb = openpyxl.Workbook()
+sheet = wb.active
+for i in range(1,10):
+        if i!=0:
+                 j=i+2
+                 
+                
+                 wb.create_sheet(index = j, title = 'HDD %d' %i)
+                 wb.save(filename = "demo.xlsx")
+```
+
+____________________
+
+
+        
